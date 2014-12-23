@@ -1,0 +1,13 @@
+{
+  "name": "Loop test",
+  "description": "Loop test",
+  "launch_path": "/index.html",
+  "icons": {
+    "84": "/style/images/icons/Icon_Hello@1.png",
+    "126": "/style/images/icons/Icon_Hello@1.5.png",
+    "189": "/style/images/icons/Icon_Hello@2.png"
+  },
+  "orientation": "portrait",
+  "version": "0.1",
+  "origin": "loop.test"
+}
