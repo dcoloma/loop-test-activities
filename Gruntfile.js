@@ -177,7 +177,23 @@ module.exports = function(grunt) {
     console.log("Accept the prompt in your device to get the list of running apps".blue)
   });
 
+  // Build just creates the zip file with the right config in the
+  // release folder
   grunt.registerTask('build', 'Build app for dev', [
+    'copy:build',
+    'configure',
+    'compress:release'
+  ]);
+
+  // Builds, install the app in the connnected device and starts it
+  grunt.registerTask('push', 'Build app for dev', [
+    'build',
+    'installApp',
+    'launchApp'
+  ]);
+
+  // Builds, kill app if running, installs the new version and launches it
+  grunt.registerTask('pushclean', 'Build app for dev', [
     'copy:build',
     'configure',
     'compress:release',
