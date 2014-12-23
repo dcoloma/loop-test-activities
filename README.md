@@ -50,7 +50,7 @@ You can just get the content of the app folder and install it via WebIDE, in tha
   
  This command just creates the app with the configured token so you can distribute it or use via WebIDE. The app will be available in releases/application.zip)
  
- ### Other Grunt goodies
+### Other Grunt goodies
  
  The Gruntfile includes also some features that allows you to interact via command line not only with loop-test-activies but with any other 3rd party app:
 
