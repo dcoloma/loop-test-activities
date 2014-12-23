@@ -3,6 +3,7 @@
 var APP_ID = "loop.test";
 var defaultAppId = APP_ID;
 var ffos = require('node-firefoxos-cli');
+var path = require('path');
 
 module.exports = function(grunt) {
   [
@@ -15,7 +16,7 @@ module.exports = function(grunt) {
     compress: {
       release: {
         options: {
-          archive: 'application.zip',
+          archive: 'release/application.zip',
         },
         files: [{
           cwd: 'build',
@@ -64,7 +65,10 @@ module.exports = function(grunt) {
   grunt.registerTask('installApp', function(myAppId){
     var appId = myAppId || defaultAppId;
     var done = this.async();
-    var src = "/Users/dcoloma/Repos/lt/application.zip";
+
+    var src = path.join(process.cwd(), 
+                        grunt.config.get("compress.release.options.archive"));
+                        //"application.zip");
 
     ffos.installPackagedApp(appId, src, function (err) {
         if (err) {
