@@ -77,5 +77,6 @@ List all the apps
 $ grunt listAllApps
    ```
 
+A simple test
  
  
